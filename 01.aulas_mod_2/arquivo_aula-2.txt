@@ -1,0 +1,5 @@
+Testando a função .write()
+        Adicionando linha 2
+        Adicionando linha 3
+        Adicionando linha 4
+        Adicionando linha 5

@@ -1,0 +1,14 @@
+1 - Utilizando apenas código python, leia o arquivo "nomes.txt" em anexo a este exercício e execute as seguintes tarefas:
+A- Leia o conteúdo e print o resultado na tela.
+B- Verifique o conteúdo de cada linha, como está a formatação? Formate os nomes para que obedeçam ao padrão de escrita, primeira letra de cada nome maiúscula, sem espaços antes ou depois e o que mais for necessário para que tenhamos uma lista de nomes 100% limpos!
+C- Salve o conteúdo limpo num novo arquivo chamado "nomes limpos.txt" com cada nome em uma linha.
+
+2- Utilizando apenas código python, leia o arquivo "vendas.csv" e execute as seguintes tarefas:
+A- Leia o conteúdo do arquivo e print o resultado na tela.
+B- Calcule o valor total em vendas.
+C- Printe o valor total em vendas para o usuário.
+
+3- Construa uma calculadora capaz de realizar as 4 operações matemáticas básicas. Esta calculadora deve obedecer as seguintes regras:
+A- Cada operação matemática deve estar encapsulada em uma função.
+B- Deve existir tratamento de erros/exceções, de forma a prevenir possíveis erros.
+C- Deve conter um menu para execução do programa, onde o usuário só saia do programa quando selecionar a opção de sair.

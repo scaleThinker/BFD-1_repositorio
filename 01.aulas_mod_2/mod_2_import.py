@@ -18,7 +18,7 @@ r.randint(1,40)
 # podemos também escolher mais de uma função especifica de uma função
 from random import randint, choice
 
-#impoprtando o modulo criado no arquivo mod_2_aula_modulos
+#importando o modulo criado no arquivo mod_2_aula_modulos
 import mod2_aula_modulos as m
 m.soma
 
@@ -34,5 +34,3 @@ m.soma
 #celery - processamento paralelo (acelerar certas atividades)
 #pyJWT - agiliza processos iniciais em web
 #SQLAlchemy - trabalhar com sql em python
-
-

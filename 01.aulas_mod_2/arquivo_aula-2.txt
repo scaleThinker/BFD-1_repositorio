@@ -1,4 +1,4 @@
-Testando a função .write()
+Testando a funï¿½ï¿½o .write()
         Adicionando linha 2
         Adicionando linha 3
         Adicionando linha 4

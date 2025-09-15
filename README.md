@@ -7,5 +7,5 @@
 
 *# This repository stores all files created during the Python Back-End course.*
 
-*# "Bolsa Futuro Digital" (or BFD) is organized by SOFTEX Pernambuco and sponsored by the Brazilian Federal Government.*
+*# "Bolsa Futuro Digital" (BFD) is organized by SOFTEX Pernambuco and sponsored by the Brazilian Federal Government.*
 

@@ -50,23 +50,71 @@ print(f"O valor total de vendas é de R$ {contador:.2f}")
 # B- Deve existir tratamento de erros/exceções, de forma a prevenir possíveis erros.
 # C Deve conter um menu para execução do programa, onde o usuário só saia do programa quando selecionar a opção de sair.
 
-def soma ():
+def soma (x,y):
     try:
-        n1 = float(input("Digite o primeiro número a ser somado:"))
-        soma_n = n1
-        controle = True
-        while controle == True:
-            n2 = float(input("Digite o próximo número a ser somado ou 0 para sair:"))    
-            if n2 != 0:
-                soma_n += n2
-            elif n2 == 0:
-                controle == False
-                break
-        return soma_n
-    except (ValueError):
-        print("Digite um número válido")       
-         
-print(soma())
+        return x + y
+    except TypeError:
+        print("Digite um número válido")
+def subtracao (x,y):
+    return x - y
+
+def multiplicacao (x,y):
+    try:
+        return x * y
+    except TypeError:
+        print("Digite um número válido")
+def divisao (x,y):
+    try:
+        return x / y
+    except ZeroDivisionError:
+        print("Não é possível dividir por 0")
+    except TypeError:
+        print("Digite um número válido")
+
+def user_num ():
+    x = float(input("Digite o 1º número"))
+    y = float(input("Digite o 2º número"))
+    return x,y
 
 
-   
+controle = True
+
+while controle == True:
+    print("Digite 1 para soma")
+    print("Digite 2 para subtração")
+    print("Digite 3 para multiplicação")
+    print("Digite 4 para divisão")
+    print("Digite 5 para sair")
+    menu = input("Digite a opção desejada:")
+    if menu == "1":
+        try:
+            x,y = user_num()
+            print(soma (x,y))
+        except ValueError:
+            print("Digite um número válido")   
+        except TypeError:
+            print("Digite um número válido") 
+    elif menu == "2":
+        try:
+            x,y = user_num()
+            print(subtracao (x,y))
+        except TypeError:
+            print("Digite um número válido") 
+    elif menu == "3":
+        try:
+            x,y = user_num()
+            print(multiplicacao (x,y))
+        except TypeError:
+            print("Digite um número válido") 
+    elif menu == "4":
+        try:
+            x,y = user_num()
+            print(divisao (x,y))
+        except TypeError:
+            print("Digite um número válido") 
+        except ZeroDivisionError:
+            print("Não é possível dividir por 0") 
+    elif menu == "5":
+        controle = False
+
+

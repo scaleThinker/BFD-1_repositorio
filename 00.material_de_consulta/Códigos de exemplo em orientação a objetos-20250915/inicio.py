@@ -21,13 +21,13 @@ class Pessoa: #Lembrando da boa prática da inicial das classes em maiúscula!
 
 #Instanciação:
 #Vamos criar dois objetos diferentes a partir da mesma classe.
-Pessoa1 = Pessoa(nome="Maria", email="maria@email.com", plano="Free")
-Pessoa2 = Pessoa(nome="João", email="joao@email.com", plano="Premium")
+pessoa1 = Pessoa(nome="Maria", email="maria@email.com", plano="Free")
+pessoa2 = Pessoa(nome="João", email="joao@email.com", plano="Premium")
 
 #Acessando atributos dos objetos
 #Repare na sintaxe: objeto.atributo
-print(f"Nome da Pessoa 1: {Pessoa1.nome}")
+print(f"Nome da Pessoa 1: {pessoa1.nome}")
 
 #Chamando métodos dos objetos
 #Repare na sintaxe: objeto.método
-print(Pessoa2.verificar_plano())
+print(pessoa2.verificar_plano())

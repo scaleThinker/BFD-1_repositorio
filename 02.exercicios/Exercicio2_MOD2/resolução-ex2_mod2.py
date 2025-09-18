@@ -21,7 +21,7 @@ def geralista (n:int):
 # E - A média dos números
 # F - Os números primos presentes na lista.
 
-lista = geralista(5)
+lista = geralista(200)
 print(lista)
 
 def analisar_numeros(lista):
@@ -44,35 +44,18 @@ def analisar_numeros(lista):
 
     media = soma / qnt
 
-    def num_primos (lista):
-        primos = []
+    primos = []
+    for n in lista:
         n_zeros = []
-        for i in range (qnt):
-            resto = qnt % 2
+        for i in range(1, n + 1):
+            resto = n % i
             if resto == 0:
-                n_zeros.append(i)
-        if len
+                n_zeros.append(i) 
+        if len(n_zeros) == 2:
+            primos.append(n)
+    
+    dic = {"Total":qnt,"Pares":qnt_pares,"Ímpares":qnt_impares,"Soma":soma,"Média":media,"Números primos":primos}
+    return dic
+    
 
-
-analisar_numeros(lista)
-
-"""
-n = 4
-n_primos = []
-while True:
-    acumulador = []
-    for i in range(n):
-        contagem = i+1 #deixa o range de 1 a n
-        ver_primo = n % 2contagem #se as divisões tiverem dois 0, é primo
-        if ver_primo == 0:
-            acumulador.append(i)
-    if len(acumulador) == 2:
-        n_primos.append(n)
-"""
-
-# n = 4
-# for i in range(n):
-#         contagem = i+1 #deixa o range de 1 a n
-#         ver_primo = n % 2
-#         print (ver_primo)
-
+print(analisar_numeros(lista))

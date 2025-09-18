@@ -5,9 +5,9 @@
 # Exemplo de retorno: [6,25,60,16,5]
 
 import random
-def geralista (n:int):
-    var = []
-    for i in range (n):
+def geralista(n:int):
+    var=[]
+    for i in range(n):
         var.append(random.randint(0,1000))
     return var
 
@@ -48,7 +48,7 @@ def analisar_numeros(lista):
     for n in lista:
         n_zeros = []
         for i in range(1, n + 1):
-            resto = n % i
+            resto = n/2 % i
             if resto == 0:
                 n_zeros.append(i) 
         if len(n_zeros) == 2:

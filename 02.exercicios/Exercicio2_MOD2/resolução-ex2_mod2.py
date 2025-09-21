@@ -3,14 +3,14 @@
 # Os números devem ser do tipo inteiro e  gerados aleatoriamente utilizando a biblioteca random.
 # Exemplo de chamada: gera_lista(5)
 # Exemplo de retorno: [6,25,60,16,5]
-
+"""
 import random
 def geralista(n:int):
     var=[]
     for i in range(n):
         var.append(random.randint(0,1000))
     return var
-
+"""
 # 2 - Crie uma função chamada "analisar_numeros". 
 # Essa função deve receber como parâmetro uma lista contendo 200 números gerados a partir da função do exercício 1 e 
 # retornar um dicionário contendo as seguintes informações:
@@ -20,7 +20,7 @@ def geralista(n:int):
 # D - A soma de todos os números
 # E - A média dos números
 # F - Os números primos presentes na lista.
-
+"""
 lista = geralista(200)
 print(lista)
 
@@ -59,3 +59,39 @@ def analisar_numeros(lista):
     
 
 print(analisar_numeros(lista))
+"""
+# 3 - Utilizando o arquivo "contatos.txt", crie uma função chamada "limpa_tel" 
+# deve receber dois parâmetros, arquivo_entrada e arquivo_saida. 
+# A função deverá limpar os dados contidos no arquivo e produzir um novo arquivo contendo somente os números de telefone, 
+# sem espaços ou caracteres especiais, 1 telefone por linha, com o nome escolhido através do parâmetro "arquivo saída".
+
+with open ("contatos.txt", "r", encoding="utf8") as cont:
+    contatos = cont.readlines()
+
+# contatos_1tp= []
+# for i in contatos:
+#     var = i.replace("+55","")
+#     contatos_1tp.append(var)
+# print(contatos_1tp)
+
+#clean = ["".join(filter(str.isdigit, item)) for item in contatos]
+
+with open("contatos.txt", "r", encoding="utf8") as cont:
+    contatos = cont.readlines()
+
+
+clean=[]
+
+
+for i in contatos:
+    digitos = ''.join(filter(str.isdigit, i))
+    clean.append(digitos)
+print (contatos)
+print("/"*200)
+print(clean)
+
+
+
+
+
+

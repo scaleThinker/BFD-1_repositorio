@@ -93,6 +93,74 @@ limpa_tel("contatos.txt","limpo.txt")
 # que retorna uma string contendo o titulo do filme, o nome do diretor, o ano em que foi lançado, sua duracao e sua nota no imdb.
 # C - Crie pelo menos 3 instâncias para demonstrar o uso.
 
+"""
+class Filme:
+    def __init__(self,titulo,diretor,ano_lancamento,duracao,nota_imdb):
+        self.titulo = titulo
+        self.diretor = diretor
+        self.ano_lancamento = ano_lancamento
+        self.duracao = duracao
+        self.nota_imdb = nota_imdb
+    
+    def detalhes(self):
+        return f"O filme '{self.titulo}' foi dirigido por {self.diretor} em {self.ano_lancamento} com {self.duracao} de duração. Recebeu {self.nota_imdb} no imdb"
+
+filme1=Filme("A Viagem de Chihiro","Hayao Miyazaki",2003,"2h5m",8.6)
+filme2=Filme("O Homem Invisível","Leigh Whannell",2020,"2h4m",7.1)
+filme3=Filme("Pokémon: O Filme - Mewtwo contra-ataca","Kunihiko Yuyama",1998,"1h36m",6.3)
+
+print(filme1.detalhes())
+print(filme2.detalhes())
+print(filme3.detalhes())
+"""
+# 5 - Crie uma classe chamada "Termometro". Siga as instruções na sequência.
+# A - O atributo de inicialização deve ser: temperatura_celsius.
+# B - Crie dois métodos: "aumentar_temp(valor)" e "diminuir_temp(valor)". Os métodos devem ser capazes de alterar a temperatura segundo o valor imputado.
+# C - Crie um terceiro método: "temperatura_atual" que deve printar na tela a temperatura naquele momento.
+# D - Crie um quarto método: "converte_farenheit" que deve calcular e retornar a temperatura atual convertida para farenheit.
+# Para teste utilize os seguintes valores:
+# Inicia em 25
+# Exibe temperatura
+# Aumenta em 25
+# Exibe temperatura
+# Diminui em 50
+# Exibe temperatura
+# Converte para Farenheit e exibe na tela.
+"""
+class Termometro:
+    def __init__(self,temperatura_celsius:float):
+        self.temperatura_celsius = temperatura_celsius
+
+    def aumentar_temp(self):
+        try:
+            temp = float(input("Insira a temperatura a ser acrescida:"))
+            self.temperatura_celsius += temp
+            return self.temperatura_celsius  
+        except ValueError:
+            print("Digite um valor válido!")
+    def diminuir_temp(self):
+        try:
+            temp = float(input("Insira a temperatura a ser subtraída:"))
+            self.temperatura_celsius -= temp
+            return self.temperatura_celsius
+        except ValueError:
+            print("Digite um valor válido!")
+    def temperatura_atual(self):
+        return f"A temperatura atual é {self.temperatura_celsius:.2f} °C."
+    def  converte_farenheit (self):
+            return f" A temperatura em fahrenheit é: {self.temperatura_celsius * (9/5) + 32} °F"
+
+
+temp = Termometro(25)
+
+print(temp.temperatura_atual())
+print(temp.aumentar_temp())
+print(temp.temperatura_atual())
+print(temp.diminuir_temp())
+print(temp.temperatura_atual())
+print(temp.converte_farenheit())
+"""
+
 
 
 

@@ -64,33 +64,34 @@ print(analisar_numeros(lista))
 # deve receber dois parâmetros, arquivo_entrada e arquivo_saida. 
 # A função deverá limpar os dados contidos no arquivo e produzir um novo arquivo contendo somente os números de telefone, 
 # sem espaços ou caracteres especiais, 1 telefone por linha, com o nome escolhido através do parâmetro "arquivo saída".
+"""
 
-with open ("contatos.txt", "r", encoding="utf8") as cont:
-    contatos = cont.readlines()
+def limpa_tel (arquivo_entrada, arquivo_saida):
+    with open(arquivo_entrada, "r", encoding="utf8") as cont:
+        contatos = cont.readlines()
+   
+    clean=[]
+    
+    for i in contatos:
+        digitos = ''.join(filter(str.isdigit, i))
+        clean.append(digitos)
+    
+    lista = ""
 
-# contatos_1tp= []
-# for i in contatos:
-#     var = i.replace("+55","")
-#     contatos_1tp.append(var)
-# print(contatos_1tp)
+    for i in clean:
+        lista += i +"\n"
+        print(lista)
 
-#clean = ["".join(filter(str.isdigit, item)) for item in contatos]
+    with open (arquivo_saida, "w", encoding="utf8") as limpo:
+        limpo.write(lista)
 
-with open("contatos.txt", "r", encoding="utf8") as cont:
-    contatos = cont.readlines()
-
-
-clean=[]
-
-
-for i in contatos:
-    digitos = ''.join(filter(str.isdigit, i))
-    clean.append(digitos)
-print (contatos)
-print("/"*200)
-print(clean)
-
-
+limpa_tel("contatos.txt","limpo.txt")
+"""
+# 4 - Crie uma classe chamada "Filme". Siga as instruções na sequência:
+# A - Os atributos de instância a serem inicializados devem ser: titulo, diretor, ano_lancamento, duracao, nota_imdb. 
+# B - A classe deve conter um método chamado detalhes, 
+# que retorna uma string contendo o titulo do filme, o nome do diretor, o ano em que foi lançado, sua duracao e sua nota no imdb.
+# C - Crie pelo menos 3 instâncias para demonstrar o uso.
 
 
 

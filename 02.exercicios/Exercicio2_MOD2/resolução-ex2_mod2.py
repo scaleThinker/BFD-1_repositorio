@@ -21,7 +21,7 @@ def geralista(n:int):
 # E - A média dos números
 # F - Os números primos presentes na lista.
 """
-lista = geralista(200)
+lista = geralista(200) 
 print(lista)
 
 def analisar_numeros(lista):
@@ -126,6 +126,7 @@ print(filme3.detalhes())
 # Diminui em 50
 # Exibe temperatura
 # Converte para Farenheit e exibe na tela.
+
 """
 class Termometro:
     def __init__(self,temperatura_celsius:float):
@@ -160,7 +161,3 @@ print(temp.diminuir_temp())
 print(temp.temperatura_atual())
 print(temp.converte_farenheit())
 """
-
-
-
-

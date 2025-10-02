@@ -24,4 +24,4 @@ ficha_1 = Ficha("Qualquer texto")
 imp_seg_andar.imprimir(ficha_1)
 
 #A impressora pode imprimir qualquer outro documento desde que ela contenha um atributo "conteudo"
-#Após esse uso pontual, não existe mais nenhuma relação entre as duas classes.
+#Após esse uso pontual, não existe mais nenhuma relação entre as duas classes. 

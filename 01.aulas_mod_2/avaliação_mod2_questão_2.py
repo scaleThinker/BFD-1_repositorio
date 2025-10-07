@@ -13,7 +13,10 @@ class Cliente:
 
     def consultar_dados(self):
         return f'Nome: {self.nome}\nCPF: {self.cpf}\nEndereço: {self.endereco}'
-    
+
+#Para evitar criar 3 funções que mudam dados diferente dos clientes,
+#optei por atribuir o valor 'false' para cada atributo da função,
+#assim, ao chamar a função, caso não atribua nenhum valor para algum atributo, esse se manterá. 
     def alterar_dados(self, nome=False, cpf=False, endereco=False):
             if nome is not False:
                 self.nome = nome
@@ -26,7 +29,7 @@ class Cliente:
 class Conta_corrente(Cliente):
     def __init__(self, nome, cpf, endereco, saldo=0.0):
         super().__init__(nome, cpf, endereco)
-        self.__saldo = saldo
+        self.__saldo = saldo #privado
     
     def consultar_saldo(self):
         return f"Saldo atual: R$ {self.__saldo:.2f}"        
@@ -38,9 +41,9 @@ class Conta_corrente(Cliente):
         return "Valor inválido para depósito!"
     
     def sacar(self, valor: float):
-        if valor > self.__saldo:
+        if valor > self.__saldo: #evita saldos maiores que o valor em conta
             return f"Saldo insuficiente! Saldo atual: R$ {self.__saldo:.2f}"
-        if valor <= 0:
+        if valor <= 0: #evita numero negativos
             return "Valor inválido para saque!"
         self.__saldo -= valor
         return f"Saque de R$ {valor:.2f} realizado com sucesso!"
@@ -61,11 +64,11 @@ print(conta.consultar_saldo())
 print(conta.sacar(800))
 print(conta.consultar_saldo())
 
-print(conta.alterar_dados(nome="Brendo Tavares dos Santos", endereco="Gragoatá, 456"))
+print(conta.alterar_dados(nome="Brendo Tavares dos Santos", endereco="Gragoatá, 456")) #opto por nao mudar o CPF e mesmo assim a função funciona
 print(conta.consultar_dados())
 
-print(conta.sacar(-50))
+print(conta.sacar(-50)) #testando um valor que ele não aceitará para testar erro
 print(conta.consultar_saldo())
 
-print(conta.depositar(-100))
+print(conta.depositar(-100)) #testando um valor que ele não aceitará para testar erro
 print(conta.consultar_saldo())

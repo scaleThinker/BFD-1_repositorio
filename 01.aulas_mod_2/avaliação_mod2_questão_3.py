@@ -20,8 +20,8 @@ class Planeta:
     
     def apresentacao(self):
         print(f"Planeta: {self.nome}")
-        print(f"Raio Equatorial: {self.raio_equatorial:,.0f} km")
-        print(f"Distância do Sol: {self.dist_sol:,.1f} milhões de km")
+        print(f"Raio Equatorial: {self.raio_equatorial} km")
+        print(f"Distância do Sol: {self.dist_sol} milhões de km")
         print(f"Composição: {self.composicao}")
 
 

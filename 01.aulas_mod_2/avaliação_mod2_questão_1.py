@@ -12,6 +12,7 @@ class Carro:
         self.tp_cambio = tp_cambio
         self.valor_lancamento = valor_lancamento
     
+    #Criei as funções para retornar os atributos, por mais que consiga acessar direto no objeto.
     def get_modelo(self):
         return self.modelo
     
@@ -30,6 +31,7 @@ class Carro:
     def get_valor_lancamento(self):
         return self.valor_lancamento
     
+    #Retorna as infos em f-string por que não se objetiva trabalhar com esse retorno depois. 
     def info_completa(self):
         return f"O carro {self.modelo} é da marca {self.marca}, com potencia {self.potencia}, possui câmbio {self.tp_cambio}. Foi lançado em {self.ano_lancamento} no valor valor de R$ {self.valor_lancamento:.2f}."
 

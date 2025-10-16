@@ -34,13 +34,13 @@ def inserir (tabela,nome,idade,cpf,email,endereço,sexo,salario):
                     (nome,idade,cpf,email,endereço,sexo,salario))
 
 con.commit()
-print("Dados inseridos com sucesso!")
+# print("Dados inseridos com sucesso!")
 
 # inserir("cadastro","Lorena Maria Silva",24,"12345678912","lorena.maria@gmail.com","Rua das Flores, 10","F",1452.50)
 # inserir("cadastro","Marlon Barreto",51,"98765432125","marlon.barr@gmail.com","Avenida Central, 125","M",14332.88)
 # inserir("cadastro","Maria Bethania Tavares Nunes dos Santos",32,"14725836998","bethania.maria@gmail.com","Flor de Liz, 225","F",9500.66)
 
-con.commit()
+# con.commit()
 
 cursor.execute("SELECT * FROM cadastro")
 resultado = cursor.fetchall()

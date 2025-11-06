@@ -1,0 +1,39 @@
+*** Classes abstratas ***
+Imaginem que vocês são os arquitetos de software em um projeto. Vocês têm dois desenvolvedores, a Waleska e a Júlia.
+
+Vocês pedem a Waleska para criar uma classe que salva dados de usuário num banco MySQL.
+
+Vocês pedem à Júlia para criar uma classe que salva dados de usuário num banco MongoDB.
+
+A Waleska cria a classe dele e nomeia o método principal como salvar_usuario(). 
+A Júlia cria a classe dela e nomeia o método como inserir_novo_user().
+
+O Problema surge quando você for usar essas classes no seu código principal (na numa rota web por exemplo), você terá que escrever um if parecido com esse:
+
+--------------------------------------------------------------------------------------------------
+if (usando_mysql): repositorio_mysql.salvar_usuario(dados) 
+
+elif (usando_mongo): repositorio_mongo.inserir_novo_user(dados)
+--------------------------------------------------------------------------------------------------
+
+Isso é péssimo! Seu código principal agora precisa saber o nome do método de cada classe. Se um terceiro desenvolvedor criar um RepositorioPostgres com o método create_user(), você terá que adicionar outro elif.
+
+A Solução: você, como arquiteta(o), cria um "Contrato" (uma Classe Abstrata) chamado BaseRepositorio. Esse contrato obriga que qualquer classe de repositório que se crie tenha um método chamado criar(self, dados).
+
+Agora, o código da Waleska e da Júlia é forçado a seguir o padrão. E o seu código principal fica simples e limpo, não importa qual banco esteja sendo usado:
+
+---------------------------------------------------------------------------------------------------
+repositorio.criar(dados) # Funciona para MySQL, MongoDB, Postgres..."
+---------------------------------------------------------------------------------------------------
+
+Ou seja:
+
+Abstract Class é uma classe "incompleta" que utilizamos como um molde ou contrato para outras classes, elas mesmas, as que já vinhamos estudando a algum tempo, chamamos essas classes "normais" de concretas neste contexto.
+
+Essa classe abstrata normalmente recebe um método abstrato (Abstract Method). É um método que a classe declara, MAS NÃO IMPLEMENTA, ou seja, ele não tem código (MAGIA?). É como se ele ordenasse a classe filha: "Você tem que implementar este método aqui!"
+
+A regra de ouro para entendermos este conceito é que: não podemos criar um objeto (instanciar) diretamente de uma classe abstrata. Ela vai existir apenas para ser herdada!
+
+Para a implementação do código de classes abstratas, utilizamos um módulo chamado: "abc" (Abstract Base Classes) e um decorator que marca um método como abstrato.
+
+Entendido esse conceito, acesse o arquivo de exemplo de código para ver um exemplo de implementação!

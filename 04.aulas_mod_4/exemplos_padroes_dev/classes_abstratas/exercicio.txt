@@ -1,0 +1,42 @@
+**Exercício de fixação do conceito**
+
+1 - Crie o Contrato (Classe Abstrata):
+
+  1.1 - Crie um arquivo pagamentos.py.
+
+  1.2 - Importe ABC e abstractmethod do módulo abc.
+
+  1.3 - Crie uma classe abstrata chamada BaseGatewayPagamento que herda de ABC.
+
+  1.4 - Dentro dela, defina um método abstrato chamado processar_pagamento(self, valor_total). Ele não deve ter código (apenas pass).
+
+2 - Crie as Classes Concretas (Implementações):
+
+  2.1 - No mesmo arquivo, crie uma classe GatewayPix que herda de BaseGatewayPagamento.
+
+  2.2 - Implemente o método processar_pagamento. Ele deve printar algo como: f"Processando R$ {valor_total:.2f} via PIX. Gerando QR Code..."
+
+  2.3 - Crie uma classe GatewayCartaoCredito que herda de BaseGatewayPagamento.
+
+  2.4 - Implemente o método processar_pagamento. Ele deve printar algo como: f"Processando R$ {valor_total:.2f} via Cartão de Crédito. Conectando à operadora..."
+
+3 - Teste o Código (Simulação da Loja):
+
+  3.1 - Crie um arquivo loja.py.
+
+  3.2 - Importe as classes GatewayPix e GatewayCartaoCredito.
+
+  3.3 - Crie uma função finalizar_compra(gateway, valor).
+    3.3.1 - Importante: O parâmetro gateway deverá ser uma instância de um gateway (Pix ou Cartão).
+
+  3.4 - Dentro da função, simplesmente chame gateway.processar_pagamento(valor).
+
+4 - No final do arquivo, simule duas compras:
+
+gateway_pix = GatewayPix()
+
+finalizar_compra(gateway_pix, 150.75)
+
+gateway_cartao = GatewayCartaoCredito()
+
+finalizar_compra(gateway_cartao, 80.20)

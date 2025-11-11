@@ -1,0 +1,18 @@
+Referência do texto abaixo: https://refactoring.guru/pt-br/design-patterns/factory-comparison
+
+-------------------------------------------------------------------------------------------------------------------
+Fábrica é um termo ambíguo que se refere a uma função, método ou classe que deve produzir alguma coisa. Mais comumente, fábricas produzem objetos. Mas elas também podem produzir arquivos, registros em bases de dados, etc.
+
+Por exemplo, qualquer uma destas coisas pode ser casualmente referenciada como uma “fábrica”:
+
+1 - uma função ou método que cria a interface de um programa;
+2 - uma classe que cria usuários;
+3 - um método estático que chama uma classe construtora de uma certa maneira;
+4 - um dos padrões de projeto criacionais.
+Geralmente, quando alguém diz uma palavra “fábrica”, o significado exato deve ficar claro a partir de um contexto. Mas se estiver em dúvida, apenas pergunte. Há uma chance que o autor seja ignorante.
+
+----------------------------------------------------------------------------------------------------------------------
+
+Estaremos estudando  o Padrão Factory Method com implementação em Python!
+
+O objetivo desta implementação, de maneira geral, é centralizar e esconder a lógica de criação de objetos. Nós já vinhamos visualizando sua base, agora veremos como implementá-lo e aprenderemos sobre um conceito importante de padrões de desenvolvimento: "Aberto para extensão, fechado para modificação".

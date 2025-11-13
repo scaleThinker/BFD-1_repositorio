@@ -1,0 +1,24 @@
+Vamos implementar um decorator para proteger a execução de um serviço da nossa aplicação contra falhas!
+
+Em alguns cenários é possível que algum sistema minoritário falhe,caso isso aconteça, não queremos uma tela de erro, queremos que o usuário continue navegando normalmente!
+
+Nossa lógica precisa funcionar da seguinte maneira:
+
+1 - Se a função original funcionar, retornamos o resultado dela!
+2 - Se ela falhar (der erro) nosso decorator vai capturar o erro, imprimir um aviso no console (com print mesmo) e retornar "None", impedindo que a aplicação trave!
+
+Para alcançar esse objetivo siga as instruções:
+
+1 - Crie um arquivo chamado "safe.py"
+2 - Importe functools.
+3 - Implemente um decorator chamado safe_run. (Lembre-se dos *args e **kwargs no wrapper!)
+4 - Dentro do wrapper utilize uma estrutura semelhante a essa:
+    try:
+      return funcao_original(*args, **kwargs)
+    execept Exception as e:
+        #Tratamento de erro aqui!
+
+5 - Crie uma função propositalmente quebrada para testar!
+    obs: Para isso basta utilizar: raise Exception("Qualquer mensagem de erro")
+
+6 - Chame a função para executar o teste! Se o resultado da função for None o que acontece?

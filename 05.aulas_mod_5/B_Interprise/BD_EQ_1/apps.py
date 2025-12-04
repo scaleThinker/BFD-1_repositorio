@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class AppUmConfig(AppConfig):
+class BdEq1Config(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'app_um'
+    name = 'BD_EQ_1'

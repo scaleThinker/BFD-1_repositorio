@@ -1,5 +1,5 @@
 """
-URL configuration for intro_django project.
+URL configuration for B_Interprise project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -15,13 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include #Não esqueça de adicionar a importação do include!
+from django.urls import path, include
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("app_um/", include("app_um.urls")), 
-    #lembre-se de substituir o caminho e o nome do app!
-    #O caminho adicionado aqui será uma url que apontará para o app:
-    #Exemplo: 127.0.0.1:8000/meu_app
-    #E irá incluir as URLs contidas em nome_do_app.urls
+    path('admin/', admin.site.urls),
+    path("home/", include("BD_EQ_1.urls")),
 ]

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- esta é a linha que diz ao django para carregar arquivos static para este documento -->
+{% load static %} 
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padaria Doce Sabor - Sua Melhor Escolha!</title>
+
+    <!-- A próxima tag link irá conter o caminho para o arquivo de estilo que embeleza a página. -->
+    <link rel="stylesheet" href="{% static 'cardapio/style.css' %}">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/50x50/F8D7DA/000000?text=Logo" alt="Logo da Padaria Doce Sabor">
+                <span>Doce Sabor</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <!-- na linha abaixo irei referenciar o nome da view para  página de cadastro-->
+                    <li><a href="{% url 'cadastro_produto' %}">Cadastro Produto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Onde o Sabor Encontra a Tradição!</h1>
+            <p>Pães frescos, doces artesanais e muito carinho em cada receita.</p>
+            <a href="#produtos" class="btn">Conheça Nossos Produtos</a>
+        </div>
+    </section>
+
+    <section id="sobre" class="about">
+        <div class="container">
+            <h2>Nossa História Deliciosa</h2>
+            <p>Desde 1995, a Padaria Doce Sabor traz para sua mesa o melhor da panificação e confeitaria. Usamos ingredientes selecionados e receitas que atravessam gerações para garantir a qualidade e o sabor que você merece.</p>
+            <p>Venha nos visitar e sentir o aroma irresistível de pão fresquinho!</p>
+        </div>
+    </section>
+
+    <section id="produtos" class="products">
+        <div class="container">
+            <h2>Nossos Destaques</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200/F8D7DA/000000?text=P%C3%A3o+Artesanal" alt="Pão Artesanal">
+                    <h3>Pão Artesanal</h3>
+                    <p>Feito com fermentação natural, casca crocante e miolo macio.</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200/F8D7DA/000000?text=Bolo+de+Cenoura" alt="Bolo de Cenoura">
+                    <h3>Bolo de Cenoura</h3>
+                    <p>O clássico bolo de cenoura com cobertura generosa de chocolate.</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200/F8D7DA/000000?text=Croissant" alt="Croissant">
+                    <h3>Croissant Francês</h3>
+                    <p>Folhado, amanteigado e perfeito para o seu café da manhã.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2>Fale Conosco</h2>
+            <p>Venha nos visitar ou entre em contato para encomendas!</p>
+            <p><strong>Endereço:</strong> Rua da Padaria, 123 - Centro, Cidade - UF</p>
+            <p><strong>Telefone:</strong> (XX) XXXX-XXXX</p>
+            <p><strong>Email:</strong> contato@docesabor.com.br</p>
+            <div class="social-links">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Padaria Doce Sabor. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

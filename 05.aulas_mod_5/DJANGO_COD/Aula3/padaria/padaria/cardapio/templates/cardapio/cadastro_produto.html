@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos - Doce Sabor</title>
+    <link rel="stylesheet" href="{% static 'cardapio/style.css' %}">
+    <link rel="stylesheet" href="{% static 'cardapio/form_style.css' %}"> </head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/50x50/F8D7DA/000000?text=Logo" alt="Logo da Padaria Doce Sabor">
+                <span>Doce Sabor</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li> <!-- Essa linha utiliza o reverse disponível na view!-->
+                    <li><a href="#cadastro">Cadastro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- A construção dessa seção é feita com DTL 
+    a linguagem do django que mapeia onde colocar cada coisa no html
+    tudo que estiver entre <> é html
+    tudo que estiver entre {} é DTL
+    -->
+
+    <section class="cadastro-section">
+        <div class="container">
+            <h2>🥖 Cadastro de Novo Produto</h2>
+            <p>Adicione novos itens ao catálogo da Padaria Doce Sabor.</p>
+
+            {% if mensagem_sucesso %}
+            <div class="success-message">
+                {{ mensagem_sucesso }}
+            </div>
+            {% endif %}
+
+            <form method="post" class="cadastro-form">
+                {% csrf_token %}
+                
+                {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="error-message">{{ field.errors }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+
+                <button type="submit" class="btn">Cadastrar Produto</button>
+            </form>
+            
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Padaria Doce Sabor. Gerenciamento Interno.</p>
+        </div>
+    </footer>
+</body>
+</html>

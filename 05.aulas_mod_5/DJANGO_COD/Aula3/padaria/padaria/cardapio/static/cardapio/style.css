@@ -1,0 +1,271 @@
+/* Importação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap');
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+.container {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    color: #333;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #8B4513; /* Marrom escuro */
+}
+
+.logo img {
+    margin-right: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: #555;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #D2691E; /* Chocolate */
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://via.placeholder.com/1500x600/F0E68C/000000?text=Padaria+Fresca') no-repeat center center/cover; /* Imagem de fundo */
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero::before { /* Overlay escuro para melhorar a leitura do texto */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero .container {
+    position: relative; /* Para garantir que o conteúdo fique acima do overlay */
+    z-index: 1;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #D2691E; /* Chocolate */
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #A0522D; /* Sienna */
+}
+
+/* Seções Gerais */
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+section:nth-of-type(even) { /* Cor de fundo para seções alternadas */
+    background-color: #f0f0f0;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #8B4513;
+}
+
+/* Seção Sobre Nós */
+.about p {
+    max-width: 800px;
+    margin: 0 auto 15px auto;
+    font-size: 1.1em;
+}
+
+/* Seção Produtos */
+.products {
+    background-color: #fff;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.product-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    margin: 15px 0 10px;
+    color: #8B4513;
+}
+
+.product-card p {
+    font-size: 0.95em;
+    padding: 0 15px 20px;
+    color: #666;
+}
+
+/* Seção Contato */
+.contact {
+    background-color: #FDF5E6; /* Off-white / Creme */
+}
+
+.contact p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 15px 10px 0;
+    color: #D2691E;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #8B4513;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #eee;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    header .container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}

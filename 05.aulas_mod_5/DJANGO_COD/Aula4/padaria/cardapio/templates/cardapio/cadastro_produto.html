@@ -1,0 +1,44 @@
+{% extends 'cardapio/base.html' %}
+{% load static %}
+
+{% block title %}Cadastro de Produtos - Doce Sabor{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'cardapio/form_style.css' %}">
+
+    <section class="cadastro-section">
+        <div class="container">
+            <h2>🥖 Cadastro de Novo Produto</h2>
+            <p>Adicione novos itens ao catálogo da Padaria Doce Sabor.</p>
+
+            {% if mensagem_sucesso %}
+            <div class="success-message" style="background-color: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin-bottom: 20px;">
+                {{ mensagem_sucesso }}
+            </div>
+            {% endif %}
+
+            <form method="post" class="cadastro-form" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                {% for field in form %}
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="{{ field.id_for_label }}" style="display:block; font-weight:bold;">
+                        {{ field.label }}:
+                    </label>
+                    
+                    {{ field }}
+                    
+                    {% if field.errors %}
+                        <div class="error-message" style="color: red; font-size: 0.9em;">
+                            {{ field.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+
+                <button type="submit" class="btn" style="margin-top: 10px;">Cadastrar Produto</button>
+            </form>
+            
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'cardapio/base.html' %}
+{% load static %}
+
+{% block title %}Home | Padaria Doce Sabor{% endblock %}
+
+{% block content %}
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Onde o Sabor Encontra a Tradição!</h1>
+            <p>Pães frescos, doces artesanais e muito carinho em cada receita.</p>
+            <a href="#produtos" class="btn">Conheça Nossos Produtos</a>
+        </div>
+    </section>
+
+    <section id="sobre" class="about">
+        <div class="container">
+            <h2>Nossa História Deliciosa</h2>
+            <p>Desde 1995, a Padaria Doce Sabor traz para sua mesa o melhor da panificação.</p>
+        </div>
+    </section>
+
+    <section id="produtos" class="products">
+        <div class="container">
+            <h2>Nossos Destaques</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200/F8D7DA/000000?text=P%C3%A3o" alt="Pão">
+                    <h3>Pão Artesanal</h3>
+                    <p>Feito com fermentação natural.</p>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2>Fale Conosco</h2>
+            <p>Rua da Padaria, 123 - Centro</p>
+        </div>
+    </section>
+{% endblock %}

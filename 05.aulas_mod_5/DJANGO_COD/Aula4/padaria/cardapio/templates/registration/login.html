@@ -1,0 +1,29 @@
+{% extends 'cardapio/base.html' %}
+
+{% block title %}Login | Padaria Doce Sabor{% endblock %}
+
+{% block content %}
+<section class="contact" style="padding: 100px 0; background-color: #f9f9f9; min-height: 60vh;">
+    <div class="container" style="max-width: 400px; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        
+        <h2 style="text-align: center; color: #d2691e; margin-bottom: 20px;">Acesso Restrito</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            
+            <div style="margin-bottom: 15px;">
+                <label>Usuário:</label>
+                {{ form.username }}
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <label>Senha:</label>
+                {{ form.password }}
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%; background-color: #d2691e; color: white; border: none; padding: 10px; cursor: pointer;">Entrar</button>
+        </form>
+
+    </div>
+</section>
+{% endblock %}

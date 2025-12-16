@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Padaria Doce Sabor{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'cardapio/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/50x50/F8D7DA/000000?text=Logo" alt="Logo">
+                <span>Doce Sabor</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'cadastro_produto' %}">Cadastro Produto</a></li>
+                        <li>
+                            <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" style="background:none; border:none; color:inherit; font:inherit; cursor:pointer;">Sair ({{ user.username }})</button>
+                            </form>
+                        </li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Padaria Doce Sabor. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

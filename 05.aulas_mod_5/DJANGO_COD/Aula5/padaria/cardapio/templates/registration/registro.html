@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Usuário</title>
+</head>
+<body>
+    <h2>Criar Nova Conta</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        
+        {# Você pode deixar comentários aqui utilizando as hashtags como em python, ok? Eu acho que esqueci de mencionar isso #}
+        {% if form.non_field_errors %} 
+            <div style="color: red;">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+
+        {% for field in form %}
+            <div class="field-wrapper">
+                {{ field.label_tag }} <br>
+                {{ field }}
+                {% if field.help_text %}
+                    <small style="color: grey;">{{ field.help_text }}</small>
+                {% endif %}
+                {% if field.errors %}
+                    <div style="color: red;">
+                        {{ field.errors }}
+                    </div>
+                {% endif %}
+            </div>
+            <br>
+        {% endfor %}
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <p>Já tem uma conta? <a href="{% url 'login' %}">Faça login aqui</a>.</p>
+</body>
+</html>
